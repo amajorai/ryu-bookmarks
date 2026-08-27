@@ -1,0 +1,39 @@
+/* Self-contained Tailwind entry for the Bookmarks companion.
+ *
+ * The companion is shipped as one HTML file, so the Ryu primitives used by the
+ * page are scanned and compiled into this bundle instead of relying on the
+ * host's stylesheet. The semantic tokens mirror @ryu/ui and remain overridable
+ * by the host theme bridge when the app is mounted in Ryu.
+ */
+@import "tailwindcss";
+@import "@ryu/ui/app-ui.css";
+@source "./";
+@source "../../../../packages/ui/src/components/badge.tsx";
+@source "../../../../packages/ui/src/components/button.tsx";
+@source "../../../../packages/ui/src/components/dialog.tsx";
+@source "../../../../packages/ui/src/components/empty.tsx";
+@source "../../../../packages/ui/src/components/input.tsx";
+@source "../../../../packages/ui/src/components/label.tsx";
+@source "../../../../packages/ui/src/components/project-folder.tsx";
+@source "../../../../packages/ui/src/components/spinner.tsx";
+@source "../../../../packages/ui/src/components/textarea.tsx";
+@source "../../../../packages/ui/src/components/tooltip.tsx";
+
+html,
+body,
+#ryu-plugin-root {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	font-family:
+		ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	font-size: 14px;
+	color: var(--foreground);
+	background: var(--background);
+}
+
+* {
+	border-color: var(--border);
+}
