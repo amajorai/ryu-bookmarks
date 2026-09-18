@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ryu.bookmarks",
+  "version": "0.1.0",
+  "description": "A self-organizing bookmark library with HTML/browser imports, notes, inferred collections, and semantic search through Ryu Spaces.",
+  "author": {
+    "name": "Ryu",
+    "url": "https://ryuhq.com"
+  },
+  "homepage": "https://github.com/amajorai/ryu-bookmarks",
+  "repository": "https://github.com/amajorai/ryu-bookmarks",
+  "keywords": [
+    "bookmarks",
+    "browser",
+    "reading list",
+    "semantic search",
+    "knowledge"
+  ],
+  "extensions": {
+    "com.ryuhq.ryu": {
+      "id": "@ryu/bookmarks",
+      "displayName": "Bookmarks"
+    }
+  }
+}
