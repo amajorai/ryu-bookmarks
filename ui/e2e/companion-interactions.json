@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "package": "bookmarks",
+  "scope": "partial",
+  "expectedRows": 18,
+  "selector": {
+    "spec": "e2e/bookmarks-companion.spec.ts",
+    "config": "e2e/bookmarks-companion.playwright.config.ts"
+  },
+  "evidenceBoundary": "The built single-file Bookmarks UI is rendered in Chromium against an in-memory local window.ryu Space/storage/UI bridge fixture. This map covers form submission, both HTML import entry points, topic filtering, favorite/edit/delete persistence, tooltip hover/focus descriptions, retry, and empty-view recovery. File selection uses local HTML fixtures; the suite does not contact live Core, a browser profile, semantic embedding providers, or external services.",
+  "assertions": [
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/App.tsx",
+        "line": "145",
+        "component": "AddBookmarkModal",
+        "tag": "form",
+        "events": "onSubmit"
+      },
+      "testTitle": "submits the add form from the URL field and reads back the saved bookmark",
+      "assertionName": "Keyboard submission creates a complete Space document and it remains available after reload.",
+      "assertionMarker": "The form keyboard submission persists the complete bookmark through Space."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/App.tsx",
+        "line": "262",
+        "component": "EmptyState",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "imports from both visible entry points and stores nested folders in Space",
+      "assertionName": "The empty-library Import HTML action opens file selection and imports every nested link.",
+      "assertionMarker": "The empty-state import action selects a file and persists every parsed link."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/App.tsx",
+        "line": "266",
+        "component": "EmptyState",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "imports from both visible entry points and stores nested folders in Space",
+      "assertionName": "Import HTML from the empty state selects a local export and persists all imported records.",
+      "assertionMarker": "The empty-state import action selects a file and persists every parsed link."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/App.tsx",
+        "line": "526",
+        "component": "Bookmarks",
+        "tag": "Input",
+        "events": "onChange"
+      },
+      "testTitle": "imports from both visible entry points and stores nested folders in Space",
+      "assertionName": "The selected browser-export file is parsed into bookmark records with folder metadata.",
+      "assertionMarker": "The empty-state import action selects a file and persists every parsed link."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/App.tsx",
+        "line": "533",
+        "component": "Bookmarks",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "imports from both visible entry points and stores nested folders in Space",
+      "assertionName": "The toolbar Import HTML action opens the shared file input and persists the chosen link.",
+      "assertionMarker": "The toolbar entry point shares the hidden file input and stores its selection."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/App.tsx",
+        "line": "664",
+        "component": "Bookmarks",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "retries the initial Space read after a temporary local failure",
+      "assertionName": "Try again repeats the failed initial Space operation and restores the empty library.",
+      "assertionMarker": "Retry makes a second Space request and clears the initial bootstrap error."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/App.tsx",
+        "line": "703",
+        "component": "Bookmarks",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "resets an empty semantic-search view to the full saved library",
+      "assertionName": "Reset view clears a zero-result query and restores the complete local library.",
+      "assertionMarker": "Reset clears the query and restores every locally saved bookmark."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/App.tsx",
+        "line": "627",
+        "component": "Bookmarks",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "topic controls filter the saved collection and restore it when toggled",
+      "assertionName": "Selecting a topic shows only matching saved records; toggling it off restores all records.",
+      "assertionMarker": "Toggling the topic control changes the rendered collection and restores all saved rows."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/bookmark-card.tsx",
+        "line": "103",
+        "component": "BookmarkCard",
+        "tag": "Tooltip",
+        "events": "onOpenChange"
+      },
+      "testTitle": "shows favorite, edit, and delete tooltips on hover and keyboard focus",
+      "assertionName": "The favorite tooltip root opens and closes with pointer and focus state changes.",
+      "assertionMarker": "The favorite Tooltip root transitions to open and closes after pointer exit or blur."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/bookmark-card.tsx",
+        "line": "117",
+        "component": "BookmarkCard",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "uses the card action triggers to persist favorite, edit, and delete",
+      "assertionName": "Favorite can be toggled on and off while updating the same persisted Space record.",
+      "assertionMarker": "Favorite toggling persists both state transitions through the same Space document."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/bookmark-card.tsx",
+        "line": "115",
+        "component": "BookmarkCard",
+        "tag": "TooltipTrigger",
+        "events": ""
+      },
+      "testTitle": "shows favorite, edit, and delete tooltips on hover and keyboard focus",
+      "assertionName": "The favorite tooltip appears on hover and its trigger references the popup after keyboard focus.",
+      "assertionMarker": "The favorite tooltip appears on hover and its trigger references it on focus."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/bookmark-card.tsx",
+        "line": "143",
+        "component": "BookmarkCard",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "uses the card action triggers to persist favorite, edit, and delete",
+      "assertionName": "Opening the bookmark title passes its exact saved URL to the local host bridge.",
+      "assertionMarker": "Opening a bookmark through its title sends only its saved URL to the host bridge."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/bookmark-card.tsx",
+        "line": "178",
+        "component": "BookmarkCard",
+        "tag": "Tooltip",
+        "events": "onOpenChange"
+      },
+      "testTitle": "shows favorite, edit, and delete tooltips on hover and keyboard focus",
+      "assertionName": "The edit tooltip root opens and closes with pointer and focus state changes.",
+      "assertionMarker": "The edit Tooltip root transitions to open and closes after pointer exit or blur."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/bookmark-card.tsx",
+        "line": "190",
+        "component": "BookmarkCard",
+        "tag": "TooltipTrigger",
+        "events": ""
+      },
+      "testTitle": "shows favorite, edit, and delete tooltips on hover and keyboard focus",
+      "assertionName": "The edit tooltip appears on hover and its trigger references the popup after keyboard focus.",
+      "assertionMarker": "The edit tooltip appears on hover and its trigger references it on focus."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/bookmark-card.tsx",
+        "line": "192",
+        "component": "BookmarkCard",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "uses the card action triggers to persist favorite, edit, and delete",
+      "assertionName": "Edit changes saved bookmark fields in place without changing its Space document identity.",
+      "assertionMarker": "The edit action trigger updates the same document id and visible title."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/bookmark-card.tsx",
+        "line": "215",
+        "component": "BookmarkCard",
+        "tag": "Tooltip",
+        "events": "onOpenChange"
+      },
+      "testTitle": "shows favorite, edit, and delete tooltips on hover and keyboard focus",
+      "assertionName": "The delete tooltip root opens and closes with pointer and focus state changes.",
+      "assertionMarker": "The delete Tooltip root transitions to open and closes after pointer exit or blur."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/bookmark-card.tsx",
+        "line": "227",
+        "component": "BookmarkCard",
+        "tag": "TooltipTrigger",
+        "events": ""
+      },
+      "testTitle": "shows favorite, edit, and delete tooltips on hover and keyboard focus",
+      "assertionName": "The delete tooltip appears on hover and its trigger references the popup after keyboard focus.",
+      "assertionMarker": "The delete tooltip appears on hover and its trigger references it on focus."
+    },
+    {
+      "row": {
+        "package": "bookmarks",
+        "source_file": "apps-store/bookmarks/ui/src/bookmark-card.tsx",
+        "line": "229",
+        "component": "BookmarkCard",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "uses the card action triggers to persist favorite, edit, and delete",
+      "assertionName": "Delete removes the matching Space document and hides its card.",
+      "assertionMarker": "The delete action trigger removes only its matching Space document."
+    }
+  ]
+}
